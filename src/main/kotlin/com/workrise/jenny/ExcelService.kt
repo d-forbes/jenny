@@ -11,10 +11,7 @@ import java.io.IOException
 class ExcelService {
     @Throws(IOException::class)
     fun createExcelFileWithUserInput(data: List<Map<String, Any>>) {
-        val templateFile = File("src/main/resources/templates/standard_hourly.xlsx")
-        val outputFilePath = "src/main/resources/output/generated.xlsx"
-        val outputFile = File("src/main/resources/output/generated.xlsx")
-        templateFile.copyTo(outputFile, overwrite = true)
+        val outputFilePath = copyExcelTemplate()
 
         val inputStream = FileInputStream(outputFilePath)
         val newWorkbook = XSSFWorkbook(inputStream)
@@ -32,5 +29,13 @@ class ExcelService {
         outputStream.close()
         newWorkbook.close()
 
+    }
+
+    private fun copyExcelTemplate(): String {
+        val templateFile = File("src/main/resources/templates/standard_hourly.xlsx")
+        val outputFilePath = "src/main/resources/output/generated.xlsx"
+        val outputFile = File("src/main/resources/output/generated.xlsx")
+        templateFile.copyTo(outputFile, overwrite = true)
+        return outputFilePath
     }
 }
