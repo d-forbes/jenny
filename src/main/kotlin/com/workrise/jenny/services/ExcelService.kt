@@ -1,4 +1,4 @@
-package com.workrise.jenny
+package com.workrise.jenny.services
 
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import org.springframework.stereotype.Service
