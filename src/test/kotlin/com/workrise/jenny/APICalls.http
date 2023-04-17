@@ -1,6 +1,21 @@
 POST http://127.0.0.1:8080/api/v1/jenny/generate-excel
-Content-Type: application/x-www-form-urlencoded
+Content-Type: application/json
 
-userInput=testt
+{
+  "data": [
+    {
+      "Name": "Hourly Rate",
+      "Rate": 100
+    },
+    {
+      "Name": "OT Rate",
+      "Rate": 150
+    },
+    {
+      "Name": "Per Diem",
+      "Rate": 100
+    }
+  ]
+}
 
 ###

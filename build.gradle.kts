@@ -22,7 +22,6 @@ dependencies {
 
 	// Apache POI
 	implementation("org.apache.poi:poi-ooxml:5.0.0")
-	implementation("org.apache.poi:poi-ooxml:5.1.0")
 
 	// logging
 	implementation("ch.qos.logback.contrib:logback-jackson:0.1.5")
